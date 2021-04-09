@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+//    Tính tổng giá
     static void totalPrice(Book books[]) {
         double total = 0;
         for (Book element : books) {
@@ -10,8 +11,8 @@ public class Main {
         }
         System.out.println("Total = " + total);
     }
-
-    static double getBookLanguage(Book books[]) {
+// Tìm sách ngôn ngữ Jav
+    static double getLanguageJava(Book books[]) {
         int count = 0;
         for (Book element : books) {
             if (element instanceof ProgrammingBook) {
@@ -23,6 +24,7 @@ public class Main {
         return count;
     }
 
+//    Sắp xếp giá tăng dần
     static void sort(Book books[]) {
         for (int i = 0; i < books.length; i++) {
             for (int j = i + i; j < books.length; j++) {
@@ -34,7 +36,7 @@ public class Main {
             }
         }
     }
-
+//    In
     static void displayList(Book books[]) {
         for (Book element : books) {
             System.out.println(element);
