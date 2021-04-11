@@ -1,22 +1,85 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
+    static void infoFullTimeEmployee() {
+        System.out.println("Nhập id");
+        String id = sc.next();
+        System.out.println("Nhập họ và tên");
+        String fullName = sc.next();
+        System.out.println("Nhập tuổi");
+        int age = sc.nextInt();
+        System.out.println("nhập số điện thoại");
+        String phoneNumber = sc.next();
+        System.out.println("Nhập email");
+        String email = sc.next();
+        System.out.println("Nhập tiền thưởng");
+        double bonus = sc.nextDouble();
+        System.out.println("Nhập tiền phạt");
+        double fine = sc.nextDouble();
+        System.out.println("Nhập lương cứng");
+        double salary = sc.nextDouble();
+        new FullTimeEmployees(id, fullName, age, phoneNumber, email, bonus, fine, salary);
+    }
+
+    static void infoPartTimeEmployee() {
+        System.out.println("Nhập id");
+        String id = sc.next();
+        System.out.println("Nhập họ và tên");
+        String fullName = sc.next();
+        System.out.println("Nhập tuổi");
+        int age = sc.nextInt();
+        System.out.println("nhập số điện thoại");
+        String phoneNumber = sc.next();
+        System.out.println("Nhập email");
+        String email = sc.next();
+        System.out.println("Nhập số giờ làm việc");
+        double hoursWorked = sc.nextDouble();
+        new PartTimeEmployees(id, fullName, age, phoneNumber, email, hoursWorked);
+    }
+
+    static void menu() {
+        System.out.println("1. Thêm nhân viên Full Time");
+        System.out.println("2. THêm nhân viên Part Time");
+        System.out.println("3. Hiển thị danh sách nhân viên");
+        System.out.println("4. Hiển thị tổng tiền lương phải trả cho nhiên viên part time");
+        System.out.println("5. Hiển thị những nhân viên Full Time nhận lương thấp hơn mức trung bình");
+        System.out.println("0. Exit");
+    }
+
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Employee employee = new Employee();
-        double arr[] = {1000000,200000,100000,500000};
-        double arr2[] = {2000000,1000000,500000,200000};
-        for (int i = 0; i < 20; i++) {
-            if (i > 15) {
-                Employee partTimeEmployee = new PartTimeEmployees(""+i, "Kien"+i, 21+i, 941136887+i, "@gmail.com", 100);
-                continue;
+        PartTimeEmployees partTimeEmployees = new PartTimeEmployees();
+        int choice;
+        do {
+            menu();
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1: {
+                    infoFullTimeEmployee();
+                    break;
+                }
+                case 2: {
+                    infoPartTimeEmployee();
+                    break;
+                }
+                case 3: {
+                    employee.displayEmployeeList();
+                    break;
+                }
+                case 4: {
+                    partTimeEmployees.getTotalSalaryPartTime();
+                    break;
+                }
+                case 5: {
+                    employee.getLowPaidEmployee();
+                    break;
+                }
             }
-            Employee fullTimeEmployee = new FullTimeEmployees(""+i, "Kien"+i, 21+i, 941136887+i, "@gmail.com",arr2[(int) Math.floor(Math.random()*4)], arr[(int) Math.floor(Math.random()*4)], 9000000);
-        }
-        employee.displayEmployeeList();
-        System.out.printf("Tổng lương phải trả = " + employee.getTotalSalary()/20);
-        employee.getLowPaidEmployee();
+        } while (choice != 0);
+
     }
-
-
 }

@@ -4,7 +4,7 @@ public class Employee {
     private String id;
     private String fullName;
     private int age;
-    private double phoneNumber;
+    private String phoneNumber;
     private String email;
     private static int amount = 0;
     private static Employee employee[] = new Employee[200];
@@ -12,7 +12,7 @@ public class Employee {
 
     }
 
-    public Employee(String id, String fullName, int age, double phoneNumber, String email) {
+    public Employee(String id, String fullName, int age, String phoneNumber, String email) {
         this.id = id;
         this.fullName = fullName;
         this.age = age;
@@ -56,11 +56,11 @@ public class Employee {
         this.age = age;
     }
 
-    public double getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(double phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -73,12 +73,17 @@ public class Employee {
     }
     public void getLowPaidEmployee(){
         double avg = this.getTotalSalary()/amount;
+        int index = 0;
         for (int i = 0; i < amount; i++) {
             if (employee[i] instanceof FullTimeEmployees) {
                 if(((FullTimeEmployees) employee[i]).getSalary() < avg){
                     System.out.println(employee[i]);
+                    index++;
                 }
             }
+        }
+        if(index == 0){
+            System.out.println("Không có ai nhận lương thấp hơn mức trung bình");
         }
     }
     public double getTotalSalary(){

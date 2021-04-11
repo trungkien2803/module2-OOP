@@ -15,7 +15,7 @@ public class FullTimeEmployees extends Employee {
         this.HardSalary = hardSalary;
     }
 
-    public FullTimeEmployees(String id, String fullName, int age, double phoneNumber, String email, double bonus, double fine, double hardSalary) {
+    public FullTimeEmployees(String id, String fullName, int age, String phoneNumber, String email, double bonus, double fine, double hardSalary) {
         super(id, fullName, age, phoneNumber, email);
         this.bonus = bonus;
         this.fine = fine;
