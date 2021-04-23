@@ -91,7 +91,6 @@ public class LibararyManagement {
                 Collections.swap(documentLists, pos, pos - 1);
                 pos--;
             }
-
         }
     }
 
