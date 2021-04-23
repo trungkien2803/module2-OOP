@@ -16,6 +16,13 @@ public class Main {
 
     public static void main(String[] args) {
         LibararyManagement libararyManagement = new LibararyManagement();
+        libararyManagement.addDocument(new Book("5","6",5,"8",40));
+        libararyManagement.addDocument(new Book("2","1",71,"8",400));
+        libararyManagement.addDocument(new Book("4","5",17,"8",45));
+        libararyManagement.addDocument(new Journal("1","4",700,"8",54));
+        libararyManagement.addDocument(new Journal("8","3",97,"8",84));
+        libararyManagement.addDocument(new Journal("3","2",100,"8",74));
+
         int choice = -1;
         do {
             menu();
