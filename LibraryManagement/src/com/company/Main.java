@@ -6,14 +6,10 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
 
     static void menu(){
-        System.out.println("1. Thêm sách");
-        System.out.println("2. Thêm tạp chí");
-        System.out.println("3. Thêm báo");
-        System.out.println("4. Hiển thị");
-        System.out.println("5. Tìm theo thể loại");
-        System.out.println("6. Sắp xếp");
-        System.out.println("7. Tìm theo id");
-        System.out.println("0. Thoát");
+        System.out.printf("%-30s%s\n","1. Thêm sách" , "4. Hiển thị");
+        System.out.printf("%-30s%s\n","2. Thêm tạp chí" , "5. Tìm theo thể loại");
+        System.out.printf("%-30s%s\n","3. Thêm báo" , "6. Sắp xếp");
+        System.out.printf("%-30s%s\n","0. Thoát" , "7. Tìm theo id");
 
     }
     public static void main(String[] args) {

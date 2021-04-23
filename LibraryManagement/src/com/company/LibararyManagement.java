@@ -85,25 +85,24 @@ public class LibararyManagement {
     public void sort() {
         for (int i = 1; i < documentLists.size(); i++) {
             int pos = i;
-            char temp1 = documentLists.get(i).getImprint().charAt(0);
-            Document temp = documentLists.get(i);
-            while (pos > 0 && temp1 < documentLists.get(pos - 1).getImprint().charAt(0)) {
-                Collections.swap(documentLists, pos, pos-1);
+            char temp = documentLists.get(i).getImprint().charAt(0);
+
+            while (pos > 0 && temp < documentLists.get(pos - 1).getImprint().charAt(0)) {
+                Collections.swap(documentLists, pos, pos - 1);
                 pos--;
             }
-            documentLists.set(pos,temp);
+
         }
     }
+
     public void sortId() {
         for (int i = 1; i < documentLists.size(); i++) {
             int pos = i;
-            char temp1 = documentLists.get(i).getDocumentId().charAt(0);
-            Document temp = documentLists.get(i);
-            while (pos > 0 && temp1 < documentLists.get(pos - 1).getDocumentId().charAt(0)) {
-                Collections.swap(documentLists, pos, pos-1);
+            char temp = documentLists.get(i).getDocumentId().charAt(0);
+            while (pos > 0 && temp < documentLists.get(pos - 1).getDocumentId().charAt(0)) {
+                Collections.swap(documentLists, pos, pos - 1);
                 pos--;
             }
-            documentLists.set(pos,temp);
         }
     }
 
