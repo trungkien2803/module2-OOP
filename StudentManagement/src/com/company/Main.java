@@ -9,21 +9,21 @@ public class Main {
         System.out.printf("%-30s%s\n", "2. Thêm sinh viên khối B", "6. Sắp xếp theo số báo danh");
         System.out.printf("%-30s%s\n", "3. Thêm sinh viên khối C", "7. Sắp xếp theo tên");
         System.out.printf("%-30s%s\n", "4. Hiển thị", "8. Tìm sinh viên theo số báo danh");
-        System.out.printf("%-30s%s\n","0. Thoát", "9.Sửa thông tin");
+        System.out.printf("%-30s%s\n","0. Thoát", "9. Sửa thông tin");
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Admissions admissions = new Admissions();
-	    StudentA studentA4 = new StudentA("2","Kien","3","4","Toan","Li","Hoa");
-        StudentB studentB4 = new StudentB("8","Tuan","3","4","Toan","Sinh","Hoa");
-        StudentC studentC4 = new StudentC("9","Thanh","3","4","Van","Su","Dia");
-        StudentC studentC2 = new StudentC("5","Quan","3","4","Van","Su","Dia");
-        StudentB studentB2 = new StudentB("6","Cuong","3","4","Toan","Sinh","Hoa");
-        StudentA studentA2 = new StudentA("3","Vu","3","4","Toan","Li","Hoa");
-        StudentC studentC3 = new StudentC("1","Tu","3","4","Van","Su","Dia");
-        StudentB studentB3 = new StudentB("4","Hiep","3","4","Toan","Sinh","Hoa");
-        StudentA studentA3 = new StudentA("7","Long","3","4","Toan","Li","Hoa");
+	    StudentA studentA4 = new StudentA("2","Kien","3","4",10,10,10);
+        StudentB studentB4 = new StudentB("8","Tuan","3","4",10,10,10);
+        StudentC studentC4 = new StudentC("9","Thanh","3","4",10,10,10);
+        StudentC studentC2 = new StudentC("5","Quan","3","4",10,10,10);
+        StudentB studentB2 = new StudentB("6","Cuong","3","4",10,10,10);
+        StudentA studentA2 = new StudentA("3","Vu","3","4",10,10,10);
+        StudentC studentC3 = new StudentC("1","Tu","3","4",10,10,10);
+        StudentB studentB3 = new StudentB("4","Hiep","3","4",10,10,10);
+        StudentA studentA3 = new StudentA("7","Long","3","4",10,10,10);
 	    admissions.addStudent(studentA4);
         admissions.addStudent(studentB4);
         admissions.addStudent(studentC4);

@@ -85,19 +85,39 @@ public class Admissions {
     public void editInfo(String id){
         for (Student student : studentList){
             if(id.equals(student.getStudentId())){
-                System.out.println("Số báo danh");
-                String newId = sc.next();
-                System.out.println("Họ và tên");
-                String fullName = sc.next();
-                System.out.println("Địa chỉ");
-                String address = sc.next();
-                System.out.println("Khu vực");
-                String area = sc.next();
+                System.out.println("1. Sửa thông tin sinh viên");
+                System.out.println("2. Sửa điểm");
+                int choice = sc.nextInt();
+                switch (choice){
 
-                student.setStudentId(newId);
-                student.setAddress(address);
-                student.setFullName(fullName);
-                student.setArea(area);
+                    case 1: {
+                        System.out.println("Số báo danh");
+                        String newId = sc.next();
+                        System.out.println("Họ và tên");
+                        String fullName = sc.next();
+                        System.out.println("Địa chỉ");
+                        String address = sc.next();
+                        System.out.println("Khu vực");
+                        String area = sc.next();
+                        student.setStudentId(newId);
+                        student.setAddress(address);
+                        student.setFullName(fullName);
+                        student.setArea(area);
+                    }
+                    case 2:{
+                        System.out.println("Điểm môn thứ nhất");
+                        double subjectFirst = sc.nextDouble();
+                        System.out.println("Điểm môn thứ hai");
+                        double secondSubject = sc.nextDouble();
+                        System.out.println("Điểm môn thứ ba");
+                        double thirdSubject = sc.nextDouble();
+                        student.setSubjectFirst(subjectFirst);
+                        student.setSecondSubject(secondSubject);
+                        student.setThirdSubject(thirdSubject);
+                    }
+                }
+
+
                 break;
             }
         }
