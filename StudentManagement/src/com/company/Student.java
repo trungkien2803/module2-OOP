@@ -91,7 +91,6 @@ public class Student {
         System.out.println("Khu vực");
         area = sc.next();
 
-
     }
     public void displayStudentInfo(){
         System.out.printf("Số báo danh: %s, Họ và tên: %-10s, Địa chỉ: %s, Khu vực: %s, ", studentId,fullName,address,area);

@@ -45,6 +45,17 @@ public class StudentC extends Student{
     public void setThirdSubject(double thirdSubject) {
         this.geographyScore = thirdSubject;
     }
+    @Override
+    public void studentInfo(){
+        super.studentInfo();
+        System.out.println("Nhập điểm Van");
+        literatureScore = sc.nextDouble();
+        System.out.println("Nhập điểm Sử");
+        historyScore = sc.nextDouble();
+        System.out.println("Nhập điểm Địa");
+        geographyScore = sc.nextDouble();
+
+    }
 
     public void displayStudentInfo(){
         System.out.printf("Khối C, ");

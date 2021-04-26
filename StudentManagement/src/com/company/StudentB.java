@@ -45,6 +45,17 @@ public class StudentB extends Student{
     public void setThirdSubject(double thirdSubject) {
         this.chemicalScore = thirdSubject;
     }
+    @Override
+    public void studentInfo(){
+        super.studentInfo();
+        System.out.println("Nhập điểm toán");
+        mathScore = sc.nextDouble();
+        System.out.println("Nhập điểm sinh");
+        biologyScore = sc.nextDouble();
+        System.out.println("Nhập điểm hóa");
+        chemicalScore = sc.nextDouble();
+
+    }
 
     @Override
     public void displayStudentInfo(){

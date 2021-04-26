@@ -45,6 +45,17 @@ public class StudentA extends Student{
         this.chemicalScore = thirdSubject;
     }
     @Override
+    public void studentInfo(){
+        super.studentInfo();
+        System.out.println("Nhập điểm toán");
+        mathScore = sc.nextDouble();
+        System.out.println("Nhập điểm lý");
+        physicalScore = sc.nextDouble();
+        System.out.println("Nhập điểm hóa");
+        chemicalScore = sc.nextDouble();
+
+    }
+    @Override
     public void displayStudentInfo(){
         System.out.printf("Khối A, ");
         super.displayStudentInfo();
