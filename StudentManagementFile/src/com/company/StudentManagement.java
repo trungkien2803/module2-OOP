@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class StudentManagement {
+    public static final String SOURCE_FILE = "student.txt";
     private List<Student> studentList = new ArrayList<>();
     private Scanner sc = new Scanner(System.in);
 
@@ -136,7 +137,7 @@ public class StudentManagement {
 
     public void writeDataToFile() {
         try {
-            FileOutputStream fos = new FileOutputStream("student.txt");
+            FileOutputStream fos = new FileOutputStream(SOURCE_FILE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(studentList);
             fos.close();
