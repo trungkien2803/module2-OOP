@@ -63,8 +63,8 @@ public class StudentManagement {
         for (int i = 0; i < studentList.size() - 1 && check; i++) {
             check = false;
             for (int j = studentList.size() - 1; j > i; j--) {
-                if (studentList.get(i).getMark() < studentList.get(j).getMark()) {
-                    Collections.swap(studentList, i, j);
+                if (studentList.get(j).getMark() > studentList.get(j-1).getMark()) {
+                    Collections.swap(studentList, j, j-1);
                 }
                 check = true;
             }
