@@ -15,28 +15,15 @@ public class PhonebookManagement {
     private Scanner sc = new Scanner(System.in);
 
     public void addPhonebook(Phonebook phonebook) {
+        enterInformation(phonebook);
+        phonebookList.add(phonebook);
+    }
+
+    private void enterInformation(Phonebook phonebook) {
         System.out.println("Phone number");
         String phoneNumber = checkInput(PHONE_NUMBER_REGEX);
         phonebook.setPhoneNumber(phoneNumber);
-        System.out.println("Contact group");
-        String contactGroup = sc.next();
-        phonebook.setContactGroup(contactGroup);
-        System.out.println("Name");
-        String name = sc.next();
-        phonebook.setName(name);
-        System.out.println("Gender");
-        String gender = checkInput(GENDER_REGEX);
-        phonebook.setGender(gender);
-        System.out.println("Address");
-        String address = sc.next();
-        phonebook.setAddress(address);
-        System.out.println("Birth date");
-        String birthDate = checkInput(BIRTH_DATE_REGEX);
-        phonebook.setBirthDate(birthDate);
-        System.out.println("Email");
-        String email = checkInput(EMAIL_REGEX);
-        phonebook.setEmail(email);
-        phonebookList.add(phonebook);
+        editInformation(phonebook);
     }
 
     public void showPhonebookList() {
@@ -60,24 +47,7 @@ public class PhonebookManagement {
         while (check) {
             for (Phonebook phonebook : phonebookList) {
                 if (phonebook.getPhoneNumber().equals(phoneNumber)) {
-                    System.out.println("Contact group");
-                    String contactGroup = sc.next();
-                    phonebook.setContactGroup(contactGroup);
-                    System.out.println("Name");
-                    String name = sc.next();
-                    phonebook.setName(name);
-                    System.out.println("Gender");
-                    String gender = checkInput(GENDER_REGEX);
-                    phonebook.setGender(gender);
-                    System.out.println("Address");
-                    String address = sc.next();
-                    phonebook.setAddress(address);
-                    System.out.println("Birth date");
-                    String birthDate = checkInput(BIRTH_DATE_REGEX);
-                    phonebook.setBirthDate(birthDate);
-                    System.out.println("Email");
-                    String email = checkInput(EMAIL_REGEX);
-                    phonebook.setEmail(email);
+                    editInformation(phonebook);
                     check = false;
                     break;
                 }
@@ -91,6 +61,27 @@ public class PhonebookManagement {
                 }
             }
         }
+    }
+
+    private void editInformation(Phonebook phonebook) {
+        System.out.println("Contact group");
+        String contactGroup = sc.next();
+        phonebook.setContactGroup(contactGroup);
+        System.out.println("Name");
+        String name = sc.next();
+        phonebook.setName(name);
+        System.out.println("Gender");
+        String gender = checkInput(GENDER_REGEX);
+        phonebook.setGender(gender);
+        System.out.println("Address");
+        String address = sc.next();
+        phonebook.setAddress(address);
+        System.out.println("Birth date");
+        String birthDate = checkInput(BIRTH_DATE_REGEX);
+        phonebook.setBirthDate(birthDate);
+        System.out.println("Email");
+        String email = checkInput(EMAIL_REGEX);
+        phonebook.setEmail(email);
     }
 
     public void deletePhoneBook(String phoneNumber) {

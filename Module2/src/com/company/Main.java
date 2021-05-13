@@ -9,13 +9,7 @@ public class Main {
         PhonebookManagement phonebookManagement = new PhonebookManagement();
         String choice;
         do {
-            System.out.println("1.Show");
-            System.out.println("2.Add");
-            System.out.println("3.Update");
-            System.out.println("4.Delete");
-            System.out.println("5.Find");
-            System.out.println("6.Read file");
-            System.out.println("7.Write file");
+            menu();
             choice = sc.next();
             switch (choice) {
                 case "1": {
@@ -46,17 +40,17 @@ public class Main {
                     break;
                 }
                 case "6": {
-                    System.out.println("Y to read");
+                    System.out.println("Y/y to read");
                     String agree = sc.next();
-                    if (agree.equals("Y")) {
+                    if (agree.equals("Y")|| agree.equals("y")) {
                         phonebookManagement.readDataFromFile();
                     }
                     break;
                 }
                 case "7": {
-                    System.out.println("Y to write");
+                    System.out.println("Y/y to write");
                     String agree = sc.next();
-                    if (agree.equals("Y")) {
+                    if (agree.equals("Y")|| agree.equals("y")) {
                         phonebookManagement.writeDataToFile();
                     }
                     break;
@@ -70,5 +64,15 @@ public class Main {
                 }
             }
         } while (!choice.equals("0"));
+    }
+
+    private static void menu() {
+        System.out.println("1.Show");
+        System.out.println("2.Add");
+        System.out.println("3.Update");
+        System.out.println("4.Delete");
+        System.out.println("5.Find");
+        System.out.println("6.Read file");
+        System.out.println("7.Write file");
     }
 }
