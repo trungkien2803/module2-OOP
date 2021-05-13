@@ -7,6 +7,13 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class PhonebookManagement {
+    public static final String CONTACT_GROUP = "Contact group";
+    public static final String NAME = "Name";
+    public static final String GENDER = "Gender";
+    public static final String ADDRESS = "Address";
+    public static final String BIRTH_DATE = "Birth date";
+    public static final String EMAIL = "Email";
+    public static final String PHONE_NUMBER = "Phone number";
     private final String PHONE_NUMBER_REGEX = "\\d{10,11}";
     private final String GENDER_REGEX = "male|female|other";
     private final String BIRTH_DATE_REGEX = "^\\d{2}-\\d{2}-\\d{4}$";
@@ -20,7 +27,7 @@ public class PhonebookManagement {
     }
 
     private void enterInformation(Phonebook phonebook) {
-        System.out.println("Phone number");
+        System.out.println(PHONE_NUMBER);
         String phoneNumber = checkInput(PHONE_NUMBER_REGEX);
         phonebook.setPhoneNumber(phoneNumber);
         editInformation(phonebook);
@@ -64,22 +71,22 @@ public class PhonebookManagement {
     }
 
     private void editInformation(Phonebook phonebook) {
-        System.out.println("Contact group");
+        System.out.println(CONTACT_GROUP);
         String contactGroup = sc.next();
         phonebook.setContactGroup(contactGroup);
-        System.out.println("Name");
+        System.out.println(NAME);
         String name = sc.next();
         phonebook.setName(name);
-        System.out.println("Gender");
+        System.out.println(GENDER);
         String gender = checkInput(GENDER_REGEX);
         phonebook.setGender(gender);
-        System.out.println("Address");
+        System.out.println(ADDRESS);
         String address = sc.next();
         phonebook.setAddress(address);
-        System.out.println("Birth date");
+        System.out.println(BIRTH_DATE);
         String birthDate = checkInput(BIRTH_DATE_REGEX);
         phonebook.setBirthDate(birthDate);
-        System.out.println("Email");
+        System.out.println(EMAIL);
         String email = checkInput(EMAIL_REGEX);
         phonebook.setEmail(email);
     }
@@ -165,8 +172,8 @@ public class PhonebookManagement {
             if (pattern.matcher(string).matches()) {
                 return string;
             }
-            System.err.println("Dữ liệu nhập vào không đúng");
-            System.err.println("Nhập lại");
+            System.err.println("Input data is incorrect");
+            System.err.println("Retype");
             string = sc.next();
         }
         return string;
